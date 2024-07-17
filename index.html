@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="container w-[100vw] h-[100vh] bg-cover flex justify-center items-center flex-col">
+        <div class="w-[23%] max-w-450px">
+            <h1 class="text-[--pl-white] text-center text-2xl font-semibold tracking-[2px] leading-[1.2] opacity-[0.85]">
+                PASSWORD GENERATOR
+            </h1>
+            <div class="display-container flex relative bg-[--dk-violet] my-[1rem] mx-0 pt-[0.35rem] rounded-[0.6rem] ">
+                <input readonly placeholder="Password" class="display w-[100%] bg-transparent outline-none 
+                border-none py-[0.8rem] px-[1rem] text-yellow-200 font-[600] text-[1rem] leading-[15px] 
+                tracking-[1px] pr-[3.5rem] uppercase placeholder-yellow-200" data-passwordDisplay>
+                <button data-copy class="absolute top-[50%] right-[1.1rem] translate-y-[-50%]">
+                    <span data-copyMsg class="opacity-0 copied bg-[--vb-violet2]  absolute -top-8 -right-3
+                    text-[13px] py-0.5 px-0.5 rounded-md text-yellow-200 transition-all duration-200 ease-in-out"></span>
+                    <img src="./images/copy.svg" alt="" width="23" height="23">
+                </button>
+            </div>
+            <div class="input-container w-[100%] bg-[--dk-violet] rounded-[0.6rem] p-[2rem]">
+                <!-- password length section -->
+                <div class="text-[--pl-white] text-[1.2rem] flex justify-between items-center">
+                    <p class="">Password Length</p>
+                    <p data-lengthNumber class="text-[--vb-yellow]">0</p>
+                </div>
+                <!-- slider -->
+                <input type="range" min="1" max="20" step="1" data-lengthSlider class="slider appearance-none w-[100%] 
+                cursor-pointer h-[0.75rem] bg-[--lt-violet] rounded-md mt-[0.9rem] mb-[0.8rem] 
+                focus:border-[3px] focus:border-solid focus:border-[--vb-yellow]">
+                <!-- checkBoxes-->
+                <div class="text-white">
+                    <div class="flex items-center my-[0.5rem] mx-0 gap-y-0 gap-x-[1rem]">
+                        <input type="checkbox" id="uppercase" class="checked:bg-[--vb-cyan] appearance-none 
+                        w-[14px] h-[14px] c-box cursor-pointer relative rounded-sm">
+                        <label for="uppercase">Include Uppercase letters</label>
+                    </div>
+                    <div class="flex items-center my-[0.5rem] mx-0 gap-y-0 gap-x-[1rem]">
+                        <input type="checkbox" id="lowercase" class="checked:bg-[--vb-cyan] appearance-none 
+                        w-[14px] h-[14px] c-box cursor-pointer relative rounded-sm">
+                        <label for="lowercase">Include Lowercase letters</label>
+                    </div>
+                    <div class="flex items-center my-[0.5rem] mx-0 gap-y-0 gap-x-[1rem]">
+                        <input type="checkbox" id="numbers" class="checked:bg-[--vb-cyan] appearance-none 
+                        w-[14px] h-[14px] c-box cursor-pointer relative rounded-sm">
+                        <label for="numbers">Include Numbers</label>
+                    </div>
+                    <div class="flex items-center my-[0.5rem] mx-0 gap-y-0 gap-x-[1rem]">
+                        <input type="checkbox" id="symbols" class="appearance-none w-[14px] h-[14px] c-box 
+                        cursor-pointer relative rounded-sm checked:bg-[--vb-cyan]">
+                        <label for="symbols">Include Symbols</label>
+                    </div>
+                </div>
+                <div class="strength-container flex justify-between items-center text-[--pl-white]
+                text-[1.2rem] mt-[1rem] mb-[1.2rem]">
+                    <p>Strength</p>
+                    <div data-indicator class="w-[1.3rem] h-[1.3rem] rounded-[50%] "></div>
+                </div>
+                <button class="generate-button w-[100%] py-[0.5rem] px-0 bg-[--vb-violet] text-center rounded-[0.6rem] 
+                cursor-pointer tracking-[1px] text-[--vb-yellow] font-600 text-[1rem] font-semibold">
+                    GENERATE PASSWORD
+                </button>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/8047145711.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
